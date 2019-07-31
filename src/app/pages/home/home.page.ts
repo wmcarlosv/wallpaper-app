@@ -9,6 +9,8 @@ import { HomeService } from '../../services/home.service';
 export class HomePage implements OnInit {
 
   last_wallpapers = [];
+  popular_wallpapers = [];
+  rates_wallpapers = [];
 
   constructor(private homeService: HomeService) { }
 
@@ -19,11 +21,9 @@ export class HomePage implements OnInit {
   loadHome():void{
     this.homeService.getHome().subscribe((data) => {
       this.last_wallpapers = data['last'];
+      this.popular_wallpapers = data['popular'];
+      this.rates_wallpapers = data['rates'];
     });
-  }
-
-  addFavourite(wallpaper_id: number):void{
-    console.log(wallpaper_id);
   }
 
 }

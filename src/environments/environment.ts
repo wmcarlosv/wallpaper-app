@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  app_url: 'http://localhost/wallpaper-admin/api/v1/',
+  api_key: 'Qy3RNPfSfoXZ5IkLVm8KKYw1ZQXipdeN6EFa6mRwFhjrL2lHgQHuv6FOwNzE1zDR0dTkdCW8HOwmQfvk'
 };
 
 /*

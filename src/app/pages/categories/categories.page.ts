@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-categories',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesPage implements OnInit {
 
-  constructor() { }
+  categories = [];
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    this.loadCategories();
   }
 
+  loadCategories():any{
+    this.apiService.getCategories().subscribe( (data:any) => {
+      this.categories = data['categories'];
+      console.log(this.categories);
+    });
+  }
 }

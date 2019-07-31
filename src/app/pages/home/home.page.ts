@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeService } from '../../services/home.service';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-home',
@@ -12,14 +12,14 @@ export class HomePage implements OnInit {
   popular_wallpapers = [];
   rates_wallpapers = [];
 
-  constructor(private homeService: HomeService) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
     this.loadHome();
   }
 
   loadHome():void{
-    this.homeService.getHome().subscribe((data) => {
+    this.apiService.getHome().subscribe((data:any) => {
       this.last_wallpapers = data['last'];
       this.popular_wallpapers = data['popular'];
       this.rates_wallpapers = data['rates'];

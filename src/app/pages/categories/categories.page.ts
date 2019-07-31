@@ -19,7 +19,6 @@ export class CategoriesPage implements OnInit {
   loadCategories():any{
     this.apiService.getCategories().subscribe( (data:any) => {
       this.categories = data['categories'];
-      console.log(this.categories);
     });
   }
 }

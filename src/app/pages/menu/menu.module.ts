@@ -35,6 +35,10 @@ const routes: Routes = [
       { 
         path: 'privacy', 
         loadChildren: '../privacy/privacy.module#PrivacyPageModule' 
+      },
+      { 
+        path: 'wallpapers-by-category', 
+        loadChildren: '../wallpapers-by-category/wallpapers-by-category.module#WallpapersByCategoryPageModule' 
       }
     ]
   },

@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-item *ngFor="let cat of categories">
+  <ion-item (click)="wallpapersByCategory(cat.category_id)" *ngFor="let cat of categories">
     <ion-avatar slot="start">
       <img src="{{ cat.category_cover }}" />
     </ion-avatar>

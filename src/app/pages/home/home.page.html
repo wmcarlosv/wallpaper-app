@@ -48,7 +48,7 @@
         <ion-grid>
           <ion-row>
             <ion-col size="12">
-              <ion-card>
+              <ion-card (click)="goToWallpaper(w.id)">
                 <img src="{{ w.thumbnail }}"/>
                 <ion-card-header>
                   <ion-card-subtitle>
@@ -75,7 +75,7 @@
           <ion-grid>
             <ion-row>
               <ion-col size="12">
-                <ion-card>
+                <ion-card (click)="goToWallpaper(w.id)">
                   <img src="{{ w.thumbnail }}"/>
                   <ion-card-header>
                     <ion-card-subtitle>

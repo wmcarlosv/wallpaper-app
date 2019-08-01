@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ export class HomePage implements OnInit {
   popular_wallpapers = [];
   rates_wallpapers = [];
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private route: Router) { }
 
   ngOnInit() {
     this.loadHome();
@@ -23,6 +24,14 @@ export class HomePage implements OnInit {
       this.last_wallpapers = data['last'];
       this.popular_wallpapers = data['popular'];
       this.rates_wallpapers = data['rates'];
+    });
+  }
+
+  goToWallpaper(wallpaper_id: number): void{
+    this.route.navigate(['/menu/wallpaper-details'],{ 
+        queryParams: {
+          id: wallpaper_id
+        }
     });
   }
 

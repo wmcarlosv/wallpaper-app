@@ -39,6 +39,10 @@ const routes: Routes = [
       { 
         path: 'wallpapers-by-category', 
         loadChildren: '../wallpapers-by-category/wallpapers-by-category.module#WallpapersByCategoryPageModule' 
+      },
+      { 
+        path: 'wallpaper-details', 
+        loadChildren: '../wallpaper-details/wallpaper-details.module#WallpaperDetailsPageModule' 
       }
     ]
   },

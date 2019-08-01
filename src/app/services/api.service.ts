@@ -24,4 +24,14 @@ export class ApiService {
   getCategories():any{
     return this.http.get(this.categories_end_point);
   }
+
+  getWallpapersByCategory(id:number):any{
+    let wallbycat_end_point:string = environment.app_url+environment.api_key+"/categories/"+id;
+    return this.http.get(wallbycat_end_point);
+  }
+
+  getWallpaperById(id:number):any{
+    let wallbyid_end_point:string = environment.app_url+"wallpaper/"+id;
+    return this.http.get(wallbyid_end_point);
+  }
 }
